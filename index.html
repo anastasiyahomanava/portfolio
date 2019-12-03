@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="./assets/styles/main.css">
   <title>Portfolio</title>
 </head>
 
@@ -27,12 +27,14 @@
       </div>
       <nav class="header__links">
         <ul>
-          <li><a href="https://github.com/anastasiyahomanava" target="_blank"><i class="fa fa-github" aria-hidden="true"></i>
-            GitHub</a></li>
+          <li><a href="https://github.com/anastasiyahomanava" target="_blank"><i class="fa fa-github"
+                aria-hidden="true"></i>
+              GitHub</a></li>
           <li><a href="https://gitlab.com/Gomonova" target="_blank"><i class="fa fa-gitlab" aria-hidden="true"></i>
-            GitLab</a></li>
-          <li><a href="https://www.linkedin.com/in/anastasiyahomanava/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i>
-            LinkedIn</a></li>
+              GitLab</a></li>
+          <li><a href="https://www.linkedin.com/in/anastasiyahomanava/" target="_blank"><i class="fa fa-linkedin"
+                aria-hidden="true"></i>
+              LinkedIn</a></li>
         </ul>
       </nav>
     </div>
@@ -46,12 +48,17 @@
         </button>
         <div class="expansion-panel__content">
           <ul>
-            <li><a href="https://rs.school/js/" target="_blank">The Rolling Scopes School</a><br> Front-end/Javascript Course |
+            <li><a href="https://rs.school/js/" target="_blank">The Rolling Scopes School</a><br> Front-end/Javascript
+              Course |
               2019-2020</li>
-            <li><a href="http://www.gomel.esl.by/" target="_blank">ESL.by</a><br> Practically Speaking English | Summer, 2019</li>
-            <li><a href="https://www.epam.com/" target="_blank">EPAM Systems</a><br> Front-end development training | 2019</li>
-            <li><a href="https://www.epam.com/" target="_blank">EPAM Systems</a><br> Front-end development training | 2018</li>
-            <li><a href="https://www.bsut.by/en/university-eng/" target="_blank">Belarusian State University Of Transport</a><br> The
+            <li><a href="http://www.gomel.esl.by/" target="_blank">ESL.by</a><br> Practically Speaking English | Summer,
+              2019</li>
+            <li><a href="https://www.epam.com/" target="_blank">EPAM Systems</a><br> Front-end development training |
+              2019</li>
+            <li><a href="https://www.epam.com/" target="_blank">EPAM Systems</a><br> Front-end development training |
+              2018</li>
+            <li><a href="https://www.bsut.by/en/university-eng/" target="_blank">Belarusian State University Of
+                Transport</a><br> The
               Faculty of Humanities and Economics | 2010-2012</li>
           </ul>
         </div>
@@ -59,21 +66,16 @@
     </div>
   </section>
 
-  <script>
-    let panel = document.getElementsByClassName("expansion-panel");
+  <section class="projects">
+    <div class="container">
+      <div class="projects__heading">
+        <h2>Projects</h2>
+      </div>
+      <div class="projects__slider"></div>
+    </div>
+  </section>
 
-    for (let i = 0; i < panel.length; i++) {
-      panel[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        let content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
-      });
-    }
-  </script>
+  <script src="./js/main.js"></script>
 </body>
 
 </html>
