@@ -69,7 +69,7 @@ body {
 @keyframes slidein {
   from {
     margin-left: 100%;
-    width: 300%; 
+    width: 300%;
   }
 
   to {
@@ -180,3 +180,76 @@ body {
   width: 100%;
 }
 
+/* .projects__slider {
+  position: absolute;
+  top: 105%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+} */
+
+.projects__slider {
+  text-align: center;
+}
+
+.projects__slide {
+  display: none;
+  position: relative;
+  margin: 0 auto;
+}
+
+.active,
+.next {
+  display: block;
+}
+
+.next {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.projects__slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.projects__slider-text {
+  display: flex;
+  margin: 30px 20%;
+  font-size: 20px;
+  border: 2px solid #252525;
+  justify-content: space-between;
+  background-color: #ffffff;
+}
+
+.projects__slider-text p {
+  padding: 5px;
+}
+
+.projects__slider-controls {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 15%;
+  cursor: pointer;
+}
+
+.projects__slider-controls.left {
+  left: 0;
+  right: auto;
+}
+
+.projects__slider-controls.right {
+  left: auto;
+  right: 0;
+}
+
+.projects__arrow {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
