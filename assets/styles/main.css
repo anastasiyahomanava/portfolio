@@ -197,6 +197,7 @@ body {
   display: none;
   position: relative;
   margin: 0 auto;
+  animation: 0.5s ease-in-out;
 }
 
 .active,
@@ -262,6 +263,42 @@ body {
   right: 50%;
 }
 
+.toleft {
+  animation-name: left;
+}
+
+.toright {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.fromleft {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+.fromright {
+  animation-name: right;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
 @media (max-width: 960px) {
   .header__photo img {
     width: 120px;
@@ -276,5 +313,19 @@ body {
     flex-direction: column;
     align-items: center;
     font-size: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .projects__arrow {
+    display: none;
+  }
+
+  .projects__slider-text {
+    border: 0;
+  }
+
+  .projects__slider-text p {
+    display: none;
   }
 }
