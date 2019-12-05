@@ -317,6 +317,10 @@ body {
 }
 
 @media (max-width: 640px) {
+  .header__links {
+    margin-left: 0;
+  }
+
   .projects__arrow {
     display: none;
   }
@@ -327,5 +331,9 @@ body {
 
   .projects__slider-text p {
     display: none;
+  }
+
+  .separator {
+    width: 293px;
   }
 }

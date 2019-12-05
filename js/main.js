@@ -60,3 +60,59 @@ document.querySelector('.projects__slider-controls.right').addEventListener('cli
     nextSliderItem(currentItem);
   }
 });
+
+const swipeDetect = (element) => {
+  let area = element;
+  let startX = 0;
+  let startY = 0;
+  let distanceX = 0;
+  let distanceY = 0;
+
+  let startTime = 0;
+  let endTime = 0;
+
+  let limit = 150;
+  let limitationY = 100;
+  let allowedTime = 300;
+
+  area.addEventListener('touchstart', function(el) {
+    let touchObj = el.changedTouches[0];
+    startX = touchObj.pageX;
+    startY = touchObj.pageY;
+
+    startTime = new Date().getTime();
+    
+    el.preventDefault();
+  });
+
+  area.addEventListener('touchmove', function(el) {
+    el.preventDefault();
+  });
+
+  area.addEventListener('touchend', function(el) {
+    let touchObj = el.changedTouches[0];
+    distanceX = touchObj.pageX - startX;
+    distanceY = touchObj.pageY - startY;
+    endTime = new Date().getTime() - startTime;
+
+    if (endTime <= allowedTime) {
+      if (Math.abs(distanceX) >= limit && Math.abs(distanceY) <= limitationY) {
+        if (distanceX > 0) {
+          if (isEnabled) {
+            previousSliderItem(currentItem);
+          } else {
+            if (isEnabled) {
+              nextSliderItem(currentItem);
+            }
+          }
+        }
+      }
+    }
+    
+    el.preventDefault();
+  });
+}
+
+let element = document.querySelector('.projects__slider');
+
+swipeDetect(element);
