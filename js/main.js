@@ -71,11 +71,23 @@ const swipeDetect = (element) => {
   let startTime = 0;
   let endTime = 0;
 
-  let limit = 150;
-  let limitationY = 100;
-  let allowedTime = 300;
+  let limit = 50;
+  let limitationY = 70;
+  let allowedTime = 250;
 
   area.addEventListener('touchstart', function(el) {
+    if (el.target.classList.contains('projects__arrow') || el.target.classList.contains('projects__slider-controls')) {
+      if (el.target.classList.contains('left')) {
+        if (isEnabled) {
+          previousSliderItem(currentItem);
+        }
+      } else {
+        if (isEnabled) {
+          nextSliderItem(currentItem);
+        }
+      }
+    }
+
     let touchObj = el.changedTouches[0];
     startX = touchObj.pageX;
     startY = touchObj.pageY;
